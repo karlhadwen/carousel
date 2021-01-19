@@ -1,5 +1,6 @@
 let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel__item');
+const dots = document.getElementsByClassName('dot');
 const totalSlides = slides.length;
 
 document.
@@ -19,7 +20,12 @@ function updateSlidePosition() {
     slide.classList.add('carousel__item--hidden');
   }
 
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove('active');
+  }
+
   slides[slidePosition].classList.add('carousel__item--visible');
+  dots[slidePosition].classList.add('active');
 }
 
 function moveToNextSlide() {

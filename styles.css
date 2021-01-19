@@ -55,3 +55,31 @@
     transform: opacity linear;
   }
 }
+
+/* Dots */
+.dots-container {
+  text-align: center;
+}
+
+.dots-container .dot {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin: 10px 10px 0;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+@media (max-width: 800px) {
+  .dots-container .dot {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.dots-container .active,
+.dots-container .dot:hover {
+  background-color: #717171;
+}
