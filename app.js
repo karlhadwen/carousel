@@ -16,6 +16,7 @@ document.
 
 Array.from(dots).forEach(function(element, index) {
   element.setAttribute('data-index', index);
+  element.setAttribute('aria-label', 'Go to slide #' + (index + 1));
   element.addEventListener('click', updateSlideOnDotClick);
 });
 
