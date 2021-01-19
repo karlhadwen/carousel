@@ -87,3 +87,33 @@ function handleSwipe() {
 
   }
 }
+
+// Check if carousel is in viewport
+function carouselInViewport(){
+  let carouselTop = carousel.getBoundingClientRect().top + document.body.scrollTop,
+      carouselBottom = carouselTop + carousel.offsetHeight,
+      viewportTop = window.scrollY,
+      viewportBottom = viewportTop + window.innerHeight;
+
+  return carouselBottom > viewportTop && carouselTop < viewportBottom;
+};
+
+// Arrow Key Detection
+document.addEventListener('keydown', function(event){
+  if (carouselInViewport()){
+    // left arrow key
+    if (event.keyCode === 37) {
+      event.preventDefault();
+      event.stopPropagation();
+      moveToPrevSlide();
+    }
+    // right arrow key
+    if (event.keyCode === 39) {
+      event.preventDefault();
+      event.stopPropagation();
+      moveToNextSlide();
+    }
+  } else {
+  return false;
+  }
+});
