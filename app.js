@@ -61,9 +61,9 @@ function moveToPrevSlide() {
 
 // Swipe logic
 let touchstartX = 0,
-  touchstartY = 0,
-  touchendX = 0,
-  touchendY = 0;
+    touchstartY = 0,
+    touchendX = 0,
+    touchendY = 0;
 
 const carousel = document.getElementsByClassName('carousel')[0];
 
