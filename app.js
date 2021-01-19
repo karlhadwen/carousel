@@ -64,12 +64,12 @@ carousel.addEventListener('touchend', function(event) {
 function handleSwipe() {
   // swipe left
   if (touchendX < touchstartX) {
-
+    moveToNextSlide();
   }
 
   // swipe right
   if (touchendX > touchstartX) {
-
+    moveToPrevSlide();
   }
 
   // swipe up
