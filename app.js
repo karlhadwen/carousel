@@ -14,6 +14,16 @@ document.
     moveToPrevSlide();
   });
 
+Array.from(dots).forEach(function(element, index) {
+  element.setAttribute('data-index', index);
+  element.addEventListener('click', updateSlideOnDotClick);
+});
+
+function updateSlideOnDotClick(){
+  slidePosition = parseInt(this.getAttribute('data-index'));
+  updateSlidePosition();
+}
+
 function updateSlidePosition() {
   for (let slide of slides) {
     slide.classList.remove('carousel__item--visible');
