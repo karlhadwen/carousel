@@ -41,3 +41,49 @@ function moveToPrevSlide() {
 
   updateSlidePosition();
 }
+
+// Swipe logic
+let touchstartX = 0,
+  touchstartY = 0,
+  touchendX = 0,
+  touchendY = 0;
+
+const carousel = document.getElementsByClassName('carousel')[0];
+
+carousel.addEventListener('touchstart', function(event) {
+  touchstartX = event.changedTouches[0].screenX;
+  touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+carousel.addEventListener('touchend', function(event) {
+  touchendX = event.changedTouches[0].screenX;
+  touchendY = event.changedTouches[0].screenY;
+  handleSwipe();
+}, false);
+
+function handleSwipe() {
+  // swipe left
+  if (touchendX < touchstartX) {
+
+  }
+
+  // swipe right
+  if (touchendX > touchstartX) {
+
+  }
+
+  // swipe up
+  if (touchendY < touchstartY) {
+
+  }
+
+  // swipe down
+  if (touchendY > touchstartY) {
+
+  }
+
+  // tap
+  if (touchendY === touchstartY) {
+
+  }
+}
